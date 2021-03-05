@@ -23,6 +23,22 @@ How to Run the Application:
 2. Once Eureka server is up check using "http://localhost:8082/
 3. Then, start the Assessment project by doing a maven build 
 4. Then, Run as Spring boot app.
+5. Make sure that the Person service is registered against Eureka.
+6. Can use Postman Client to test the API's
+7. Need to first generate the token by passing user name and password using POST API : http://localhost:8989/user?user="shinu"&password="test"
+8. Once the token is received use that token to perform CRUD operation in Person utilities using below API's
+   POST API : http://localhost:8989/persons/add 
+   Header   : Key -> Authorization value : token generated
+   
+   GET API : http://localhost:8989/persons/all
+   Header   : Key -> Authorization value : token generated
+   
+   PUT API : http://localhost:8989/persons/update
+   Header   : Key -> Authorization value : token generated
+   
+   DELETE API : http://localhost:8989/persons/delete
+   Header   : Key -> Authorization value : token generated
+    
 
 Enable Lombok support on your IDE
 Refer to the following link for instructions:
@@ -61,7 +77,7 @@ Make sure to use jdbc:h2:mem:testdb as your jdbc url. If you intend to you use c
 http://localhost:8989/h2-console/
 
 Testing the Person Utility API
-Please use the Swagger url to perform CRUD operations.
+Please use the Swagger url to see the API Documentation.
 
 Author
 Vivek Rajendran
